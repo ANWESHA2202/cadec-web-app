@@ -2,8 +2,10 @@ import { useState } from "react"
 import Step1 from "./SignUpSteps/Step1";
 import Step2 from "./SignUpSteps/Step2";
 import Step3 from "./SignUpSteps/Step3";
+import SignupProgress from "../layout/SignupProgress";
 const SignUpForm = () => {
     const [step,setStep]=useState(1);
+    const [lastCompletedStep,setLastCompletedStep]=useState(0);
     const [entries,setEntries]=useState({
         name:'',
         email_id:'',
@@ -26,10 +28,13 @@ const SignUpForm = () => {
     switch(step){
         case 1:{
             return(
-                <Step1
-                    setEntries={setEntries}
-                    nextStep={nextStep}
-                />
+                <div className="bg-white rounded-xl p-10 ">
+                    <SignupProgress step={step} lastCompletedStep={lastCompletedStep}/>
+                    <Step1
+                        setEntries={setEntries}
+                        nextStep={nextStep}
+                    />
+                </div>
             )
         }
         case 2:{
