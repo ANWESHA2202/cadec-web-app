@@ -6,7 +6,10 @@ const Step2 = ({prevStep,nextStep}) => {
     const [otp, setOtp] = useState('');
   return (
     <div className="flex flex-col space-y-8 justify-center items-center">
-        <h1 className='text-xl font-bold text-blue-900'>Enter OTP to Verify Email</h1>
+        <div className="">
+            <h1 className='text-xl font-bold text-blue-900'>Enter OTP to Verify Email</h1>
+            <h1 className="text-right underline text-blue-800 cursor-pointer" onClick={nextStep}>Skip</h1>
+        </div>
         
         <OTPInput
             value={otp}

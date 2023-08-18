@@ -29,7 +29,7 @@ const SignUpForm = () => {
     }
 
     const nextStep=()=>{
-        if(step<3){
+        if(step<=3){
             console.log(entries)
             setStep(prevStep=>prevStep+1)
             // setLastCompletedStep(prevStep=>prevStep+1)
@@ -68,9 +68,12 @@ const SignUpForm = () => {
         }
         case 3:{
             return(
-                <Step3
-                    prevStep={prevStep}
-                />
+                <div className="bg-white rounded-xl p-10">
+                    <SignupProgress step={step} lastCompletedStep={lastCompletedStep}/>
+                    <Step3
+                        prevStep={prevStep}
+                    />
+                </div>
             )
         }
         default:
