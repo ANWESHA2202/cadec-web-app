@@ -30,7 +30,7 @@ const SignUpForm = () => {
 
     const nextStep=()=>{
         if(step<=3){
-            console.log(entries)
+            // console.log(entries)
             setStep(prevStep=>prevStep+1)
             // setLastCompletedStep(prevStep=>prevStep+1)
         }
