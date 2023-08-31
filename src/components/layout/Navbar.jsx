@@ -1,3 +1,4 @@
+import { Link } from '@chakra-ui/react'
 import favicon from '../../assets/favicon.png'
 import profile from '../../assets/profile.png'
 import dots from '../../assets/dots.gif'
@@ -9,14 +10,16 @@ import {
   } from '@chakra-ui/react'
 const Navbar = () => {
   return (
-    <div className="m-10 mt-2 flex flex-col space-y-5 select-none">
+    <div className="m-10 mt-2 flex flex-col space-y-5 select-none shadow-sm p-3">
         <div className="text-gray-500">
             Selected Course: <span className="font-semibold italic text-blue-900">Commerce</span>
         </div>
         <div className="flex justify-between">
             <div className="flex space-x-2">
                 <div className="border-2 rounded-full bg-slate-100">
-                    <img src={favicon} alt="logo" width={50} height={50}/>
+                    <Link href='/'>
+                        <img src={favicon} alt="logo" width={50} height={50}/>
+                    </Link>
                 </div>
                 <div className="">
                     <div className="italic text-gray-600 font-bold text-xl" style={{fontFamily:'cursive'}}>Hi,</div>
