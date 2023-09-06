@@ -28,12 +28,16 @@ const Navbar = () => {
             </div>
             <div className="flex justify-center items-center space-x-5">
                 <div className="border-2 rounded-full bg-slate-100 cursor-pointer">
-                    <img src={profile} width={50} height={50} alt="" />
+                    <Link href='/profile'>
+                        <img src={profile} width={50} height={50} alt="" />
+                    </Link>
                 </div>
                 <div className="cursor-pointer">
                     <Menu>
                         <MenuButton>
-                            <img src={dots} width={30} alt="" />
+                            
+                                <img src={dots} width={30} alt="" />
+                           
                         </MenuButton>
                         <MenuList>
                             <MenuItem>About Us</MenuItem>
