@@ -1,14 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import OTPInput from "react-otp-input"
 import { Button } from "@chakra-ui/react";
 
-const Step3 = ({prevStep,nextStep}) => {
+const Step3 = ({prevStep}) => {
     const [otp, setOtp] = useState('');
+    const navigate=useNavigate();
+    const handleSignup=()=>{
+      navigate('/')
+    }
   return (
     <div className="flex flex-col space-y-8 justify-center items-center">
         <div className="">
             <h1 className='text-xl font-bold text-blue-900'>OTP to Verify Phone No.</h1>
-            <h1 className="text-right underline text-blue-800 cursor-pointer" onClick={nextStep}>Skip</h1>
+            <h1 className="text-right underline text-blue-800 cursor-pointer" onClick={handleSignup}>Skip</h1>
         </div>
         
         <OTPInput
@@ -21,7 +26,7 @@ const Step3 = ({prevStep,nextStep}) => {
         <div className="flex sm:flex-row flex-col justify-between w-full">
         <Button  onClick={prevStep}>Go Back</Button>
 
-        <Button colorScheme='black' className="bg-black" onClick={nextStep}>Submit</Button>
+        <Button colorScheme='black' className="bg-black" onClick={handleSignup}>Submit</Button>
 
         </div>
 

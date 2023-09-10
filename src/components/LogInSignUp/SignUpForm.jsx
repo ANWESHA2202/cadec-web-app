@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import Step1 from "./SignUpSteps/Step1";
 import Step2 from "./SignUpSteps/Step2";
 import Step3 from "./SignUpSteps/Step3";

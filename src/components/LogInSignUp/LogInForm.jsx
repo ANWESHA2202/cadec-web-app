@@ -1,10 +1,15 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Text,Input,InputGroup,InputRightAddon,Button } from '@chakra-ui/react'
 import closeEye from '../../assets/close-eye.png'
 import openEye from '../../assets/eye.png'
 import email from '../../assets/email.png'
 const LogInForm = () => {
-    const [showPassword,setShowPassword]=useState(false)
+    const [showPassword,setShowPassword]=useState(false);
+    const navigate=useNavigate();
+    const handleLogin=()=>{
+        navigate('/');
+    }
   return (
     <div className='rounded-xl bg-white shadow-xl p-10 justify-center flex flex-col space-y-8'>
         <div><h1 className='font-semibold text-xl m-5 text-gray-700'>Log In To Your Account</h1></div>
@@ -33,7 +38,7 @@ const LogInForm = () => {
             </InputGroup>
         </div>
         
-            <Button colorScheme='black' className='bg-black'>Log In</Button>
+            <Button colorScheme='black' className='bg-black' onClick={handleLogin}>Log In</Button>
        
     </div>
   )
