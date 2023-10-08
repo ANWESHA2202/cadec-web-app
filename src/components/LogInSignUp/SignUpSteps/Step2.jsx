@@ -1,33 +1,95 @@
-import { useState } from "react";
-import OTPInput from "react-otp-input"
-import { Button } from "@chakra-ui/react";
+import { Text, Button } from "@chakra-ui/react";
+import Select from "react-select";
 
-const Step2 = ({prevStep,nextStep}) => {
-    const [otp, setOtp] = useState('');
+const options2 = [
+  { value: "science", label: "Science" },
+  { value: "arts", label: "Arts" },
+  { value: "commerce", label: "Commerce" },
+];
+
+const Step2 = ({ prevStep, nextStep, handleChange, handleSelectChange }) => {
   return (
-    <div className="flex flex-col space-y-8 justify-center items-center">
-        <div className="">
-            <h1 className='text-xl font-bold text-blue-900'>Enter OTP to Verify Email</h1>
-            <h1 className="text-right underline text-blue-800 cursor-pointer" onClick={nextStep}>Skip</h1>
+    <div className="flex flex-col space-y-3 justify-center items-center">
+      <h1 className="text-xl font-bold text-blue-900">
+        Fill Your Subject Details To Sign Up
+      </h1>
+      <div className="w-full">
+        <div>
+          <Text className="font-semibold text-gray-700">
+              DSC Subjects<span className="text-red-500">*</span>
+          </Text>
+          <Select
+            options={options2}
+            isSearchable
+            isClearable
+            onChange={(e) => handleSelectChange(e, "dsc")}
+          />
         </div>
-        
-        <OTPInput
-            value={otp}
-            onChange={setOtp}
-            numInputs={4}
-            renderSeparator={<span>--</span>}
-            renderInput={(props) => <input {...props} style={{width:'30px', height:'30px'}} className="text-center focus:outline-none focus:border-green-400  border-2 border-blue-400 rounded-lg"/>}
-        />
-        <div className="flex sm:flex-row flex-col justify-between w-full">
-        <Button  onClick={prevStep}>Go Back</Button>
-
-        <Button colorScheme='blue' onClick={nextStep}>Next</Button>
-
+        <div>
+          <Text className="font-semibold text-gray-700">
+            DSE Subjects<span className="text-red-500">*</span>
+          </Text>
+          <Select
+            options={options2}
+            isSearchable
+            isClearable
+            onChange={(e) => handleSelectChange(e, "dse")}
+          />
         </div>
+        <div>
+          <Text className="font-semibold text-gray-700">
+              GE Subjects<span className="text-red-500">*</span>
+          </Text>
+          <Select
+            options={options2}
+            isSearchable
+            isClearable
+            onChange={(e) => handleSelectChange(e, "ge")}
+          />
+        </div>
+        <div>
+          <Text className="font-semibold text-gray-700">
+            VAC Subjects<span className="text-red-500">*</span>
+          </Text>
+          <Select
+            options={options2}
+            isSearchable
+            isClearable
+            onChange={(e) => handleSelectChange(e, "vac")}
+          />
+        </div>
+        <div>
+          <Text className="font-semibold text-gray-700">
+            AECC Subjects<span className="text-red-500">*</span>
+          </Text>
+          <Select
+            options={options2}
+            isSearchable
+            isClearable
+            onChange={(e) => handleSelectChange(e, "aecc")}
+          />
+        </div>
+        <div>
+          <Text className="font-semibold text-gray-700">
+            SEC Subjects<span className="text-red-500">*</span>
+          </Text>
+          <Select
+            options={options2}
+            isSearchable
+            isClearable
+            onChange={(e) => handleSelectChange(e, "sec")}
+          />
+        </div>
+      </div>
+      <div className="flex sm:flex-row flex-col justify-between w-full">
+        <Button onClick={prevStep}>Go Back</Button>
 
-
+        <Button colorScheme="blue" onClick={nextStep}>
+          Next
+        </Button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Step2
+export default Step2;

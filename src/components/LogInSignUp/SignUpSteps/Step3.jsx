@@ -4,31 +4,20 @@ import OTPInput from "react-otp-input"
 import { Button } from "@chakra-ui/react";
 
 const Step3 = ({prevStep}) => {
-    const [otp, setOtp] = useState('');
-    const navigate=useNavigate();
-    const handleSignup=()=>{
-      navigate('/')
-    }
   return (
     <div className="flex flex-col space-y-8 justify-center items-center">
-        <div className="">
-            <h1 className='text-xl font-bold text-blue-900'>OTP to Verify Phone No.</h1>
-            <h1 className="text-right underline text-blue-800 cursor-pointer" onClick={handleSignup}>Skip</h1>
-        </div>
         
-        <OTPInput
-            value={otp}
-            onChange={setOtp}
-            numInputs={4}
-            renderSeparator={<span>--</span>}
-            renderInput={(props) => <input {...props} style={{width:'30px', height:'30px'}} className="text-center focus:outline-none focus:border-green-400  border-2 border-blue-400 rounded-lg"/>}
-        />
-        <div className="flex sm:flex-row flex-col justify-between w-full">
-        <Button  onClick={prevStep}>Go Back</Button>
+      <h1 className='text-xl font-bold text-blue-900'>Verify Your Account Before Login</h1>
+            
+      <div className="text-gray-500">We have sent you an email to verify your account.<br/> Kindly check the email to access your account.</div>
+        
+        
+      <div className="flex sm:flex-row flex-col justify-between w-full">
+      <Button  onClick={prevStep}>Go Back</Button>
 
-        <Button colorScheme='black' className="bg-black" onClick={handleSignup}>Submit</Button>
+      {/* <Button colorScheme='black' className="bg-black" onClick={handleSignup}>Submit</Button> */}
 
-        </div>
+      </div>
 
 
     </div>

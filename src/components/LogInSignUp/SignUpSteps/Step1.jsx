@@ -16,7 +16,7 @@ const options2 = [
 const Step1 = ({handleChange,handleSelectChange,nextStep}) => {
   return (
     <div className='flex flex-col space-y-5'>
-        <h1 className='text-xl font-bold text-blue-900'>Fill Your Details To Sign Up</h1>
+        <h1 className='text-xl font-bold text-blue-900'>Fill Your Personal Details To Sign Up</h1>
         <div className=''>
             <Text className='font-semibold text-gray-700'>Enter Your Name<span className='text-red-500'>*</span></Text>
             <Input
@@ -50,7 +50,7 @@ const Step1 = ({handleChange,handleSelectChange,nextStep}) => {
                 onChange={(e)=>handleSelectChange(e,'stream')}
             />
         </div>
-        <div>
+        {/* <div>
             <Text className='font-semibold text-gray-700'>Choose Your Interests<span className='text-red-500'>*</span></Text>
             <Select 
                 options={options2} 
@@ -59,7 +59,7 @@ const Step1 = ({handleChange,handleSelectChange,nextStep}) => {
                 isMulti
                 onChange={(e)=>handleSelectChange(e,'interests')}
             />
-        </div>
+        </div> */}
         <Button colorScheme='blue' onClick={nextStep}>Next</Button>
     </div>
   )

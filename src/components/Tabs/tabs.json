@@ -1,0 +1,23 @@
+{
+    "tabs":[
+        {
+            "name":"Study Materials",
+            "bg":"notes"
+        },
+        {
+            "name":"Assignments",
+            "bg":"assignments"
+        },
+        {
+            "name":"Research Works",
+            "bg":"researchworks"
+        },
+        {
+            "name":"Placements / Internships",
+            "bg":"placements"
+        }
+    ],
+    "study-materials":[
+
+    ]
+}

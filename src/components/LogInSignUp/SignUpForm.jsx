@@ -10,8 +10,15 @@ const SignUpForm = () => {
         name:'',
         email:'',
         password:'',
-        interests:[],
-        stream:''
+        stream:'',
+        course:'',
+        dsc:'',
+        dse:'',
+        ge:'',
+        vac:'',
+        aecc:'',
+        sec:''
+
     })
 
 
@@ -24,7 +31,6 @@ const SignUpForm = () => {
             setEntries(prevEntries=>({...prevEntries,[field]:e.map(item=>item.value)}))
         }else{
             setEntries(prevEntries=>({...prevEntries,[field]:e.value}))
-
         }
     }
 
@@ -59,6 +65,8 @@ const SignUpForm = () => {
                 <div className="bg-white rounded-xl p-10">
                     <SignupProgress step={step} lastCompletedStep={lastCompletedStep}/>
                     <Step2
+                        handleChange={handleChange}
+                        handleSelectChange={handleSelectChange}
                         prevStep={prevStep}
                         nextStep={nextStep}
                     />
