@@ -5,13 +5,11 @@ import Step3 from "./SignUpSteps/Step3";
 import SignupProgress from "../layout/SignupProgress";
 const SignUpForm = () => {
     const [step,setStep]=useState(1);
-    const [lastCompletedStep,setLastCompletedStep]=useState(0);
     const [entries,setEntries]=useState({
         name:'',
         email:'',
         password:'',
-        stream:'',
-        course:'',
+        course:0,
         dsc:'',
         dse:'',
         ge:'',
@@ -20,6 +18,7 @@ const SignUpForm = () => {
         sec:''
 
     })
+
 
 
     const handleChange=(e)=>{
@@ -51,11 +50,12 @@ const SignUpForm = () => {
         case 1:{
             return(
                 <div className="bg-white rounded-xl p-10">
-                    <SignupProgress step={step} lastCompletedStep={lastCompletedStep}/>
+                    <SignupProgress step={step}/>
                     <Step1
                         handleChange={handleChange}
                         handleSelectChange={handleSelectChange}
                         nextStep={nextStep}
+                        entries={entries}
                     />
                 </div>
             )
@@ -63,12 +63,13 @@ const SignUpForm = () => {
         case 2:{
             return(
                 <div className="bg-white rounded-xl p-10">
-                    <SignupProgress step={step} lastCompletedStep={lastCompletedStep}/>
+                    <SignupProgress step={step} />
                     <Step2
                         handleChange={handleChange}
                         handleSelectChange={handleSelectChange}
                         prevStep={prevStep}
                         nextStep={nextStep}
+                        entries={entries}
                     />
                 </div>
 
@@ -77,7 +78,7 @@ const SignUpForm = () => {
         case 3:{
             return(
                 <div className="bg-white rounded-xl p-10">
-                    <SignupProgress step={step} lastCompletedStep={lastCompletedStep}/>
+                    <SignupProgress step={step}/>
                     <Step3
                         prevStep={prevStep}
                     />

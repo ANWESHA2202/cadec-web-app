@@ -6,7 +6,7 @@ const interests=[
     {value:'hr',label:'HR'},
     
 ]
-const Interests = () => {
+const Subjects = () => {
   return (
     <div className='w-1/2 h-full flex flex-col space-y-5'>
         <div>
@@ -28,4 +28,4 @@ const Interests = () => {
   )
 }
 
-export default Interests
+export default Subjects

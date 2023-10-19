@@ -18,6 +18,47 @@
         }
     ],
     "study-materials":[
-
+        {
+            "name":"Notes",
+            "bg":"notes"
+        },
+        {
+            "name":"Syllabus",
+            "bg":"notes"
+        },
+        {
+            "name":"Marking Scheme",
+            "bg":"notes"
+        },
+        {
+            "name":"Sample and PYQs",
+            "bg":"notes"
+        }
+    ],
+    "assignments":[
+        {
+            "name":"DSC",
+            "bg":"notes"
+        },
+        {
+            "name":"DSE",
+            "bg":"notes"
+        },
+        {
+            "name":"GE",
+            "bg":"notes"
+        },
+        {
+            "name":"VAC",
+            "bg":"notes"
+        },
+        {
+            "name":"AECC",
+            "bg":"notes"
+        },
+        {
+            "name":"SEC",
+            "bg":"notes"
+        }
     ]
 }
