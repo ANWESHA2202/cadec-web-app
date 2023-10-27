@@ -12,9 +12,9 @@ const fetchApi = async (
     let response;
 
     if (method.toLowerCase() === "get") {
-      response = await fetch(`http://62.72.58.17/api/${url}/`);
+      response = await fetch(`http://admin.siksakah.com/api/${url}`);
     } else {
-      response = await fetch(`http://62.72.58.17/api/${url}/`, {
+      response = await fetch(`http://admin.siksakah.com/api/${url}/`, {
         method: method,
         headers: headers,
         body: JSON.stringify(requestBody),

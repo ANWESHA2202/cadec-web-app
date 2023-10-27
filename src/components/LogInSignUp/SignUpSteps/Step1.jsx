@@ -2,6 +2,7 @@ import { Text, Input, Button } from "@chakra-ui/react";
 import Select from "react-select";
 import { useEffect, useState } from "react";
 import fetchApi from "../../FetchApi/fetchApi";
+import { useToast } from '@chakra-ui/react'
 
 
 
@@ -40,12 +41,13 @@ function isValidEmail(email) {
 
 function isValidPassword(password) {
   // You can define your password validation criteria here
-  const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&~`#_+;:"'])[A-Za-z\d@$!%*?&~`#_+;:"']{6,}$/;
+
   return passwordRegex.test(password);
 }
 
 const Step1 = ({ handleChange, handleSelectChange, nextStep, entries }) => {
+  const toast=useToast();
   const [errors, setErrors] = useState({});
   const [coursesOption, setCoursesOption] = useState([
     { label: "", value: "" },
@@ -81,7 +83,17 @@ const Step1 = ({ handleChange, handleSelectChange, nextStep, entries }) => {
         course:entries.course
       });
       const res = await fetchApi("user/register", responseBody, false);
-      console.log(res, "response");
+      
+      if(res.status>=200 && res.status<300){
+        toast({
+          title: 'Account created.',
+          description: "We've created your account for you.",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
+        localStorage.setItem('token',res?.data?.token)
+      }
       nextStep();
     }
   };
@@ -134,11 +146,11 @@ const Step1 = ({ handleChange, handleSelectChange, nextStep, entries }) => {
         <Select
           options={coursesOption}
           isSearchable
-          isClearable
+          // isClearable
           value={
             coursesOption[
               coursesOption.findIndex((option) => option.value === entries.course)
-            ]
+            ]||''
           }
           onChange={(e) => handleSelectChange(e, "course")}
         />
