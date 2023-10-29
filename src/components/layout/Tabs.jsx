@@ -5,9 +5,9 @@ const Tabs = () => {
     <div className='flex justify-around'>
         {tabs.tabs?.map((tab,idx)=>{
             return (
-                <div className="" key={idx}>
+                <a className="" key={idx} href={tab.link}>
                     <Tab tab={tab}/>
-                </div>
+                </a>
             )
         })}
     </div>

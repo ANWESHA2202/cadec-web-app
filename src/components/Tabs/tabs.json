@@ -2,19 +2,26 @@
     "tabs":[
         {
             "name":"Study Materials",
-            "bg":"notes"
+            "bg":"notes",
+            "link":"/study-material"
         },
         {
             "name":"Assignments",
-            "bg":"assignments"
+            "bg":"assignments",
+            "link":"/assignments"
+
         },
         {
             "name":"Research Works",
-            "bg":"researchworks"
+            "bg":"researchworks",
+            "link":"/research-works"
+
         },
         {
             "name":"Placements / Internships",
-            "bg":"placements"
+            "bg":"placements",
+            "link":"/placements"
+
         }
     ],
     "study-materials":[
