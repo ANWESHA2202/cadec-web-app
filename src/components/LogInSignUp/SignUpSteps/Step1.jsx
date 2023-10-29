@@ -30,6 +30,25 @@ function validateForm(data) {
     errors.course = "Course selection is required";
   }
 
+  if (!data.mobile) {
+    errors.mobile = "Mobile No is required";
+  } else if (!/^\d{10}$/.test(data.mobile)) {
+    errors.mobile = "Invalid Mobile No format. Should be a 10-digit number";
+  }
+
+  // Validate Expected Passout Year
+  if (!data.passyear) {
+    errors.passyear = "Expected Passout Year is required";
+  } else if (!/^\d{4}$/.test(data.passyear)) {
+    errors.passyear = "Invalid Passout Year format. Should be a 4-digit year";
+  } else {
+    const currentYear = new Date().getFullYear();
+    const passYear = parseInt(data.passyear, 10);
+    if (passYear < currentYear || passYear > currentYear + 6) {
+      errors.passyear = `Passout Year must be between ${currentYear} and ${currentYear + 6}`;
+    }
+  }
+
   return errors;
 }
 
@@ -93,8 +112,17 @@ const Step1 = ({ handleChange, handleSelectChange, nextStep, entries }) => {
           isClosable: true,
         })
         localStorage.setItem('token',res?.data?.token)
+        nextStep();
+      }else{
+        
+          toast({
+            title: 'Some error has occurred',
+            description: res.message,
+            status: 'error',
+            duration: 9000,
+            isClosable: true,
+          })
       }
-      nextStep();
     }
   };
 
@@ -138,6 +166,30 @@ const Step1 = ({ handleChange, handleSelectChange, nextStep, entries }) => {
           placeholder="eg. Test@123"
         />
         {errors.password && <p className="text-red-500">*{errors.password}</p>}
+      </div>
+      <div>
+        <Text className="font-semibold text-gray-700">
+          Enter Mobile No.<span className="text-red-500">*</span>
+        </Text>
+        <Input
+          name="mobile"
+          value={entries?.mobile || ""}
+          onChange={handleChange}
+          placeholder="eg. 9876543210"
+        />
+        {errors.mobile && <p className="text-red-500">*{errors.mobile}</p>}
+      </div>
+      <div>
+        <Text className="font-semibold text-gray-700">
+          Enter Expected Passout Year<span className="text-red-500">*</span>
+        </Text>
+        <Input
+          name="passyear"
+          value={entries?.passyear || ""}
+          onChange={handleChange}
+          placeholder="eg. 2026"
+        />
+        {errors.passyear && <p className="text-red-500">*{errors.passyear}</p>}
       </div>
       <div>
         <Text className="font-semibold text-gray-700">

@@ -10,6 +10,8 @@ const SignUpForm = () => {
         email:'',
         password:'',
         course:0,
+        mobile:'',
+        passyear:'',
         dsc:'',
         dse:'',
         ge:'',

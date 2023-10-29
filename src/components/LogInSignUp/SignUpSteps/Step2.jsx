@@ -3,6 +3,7 @@ import Select from "react-select";
 import { useState, useEffect } from "react";
 import fetchApi from "../../FetchApi/fetchApi";
 import { isExpired, decodeToken } from "react-jwt";
+import { useToast } from "@chakra-ui/react";
 
 function validateForm(data) {
   const errors = {};
@@ -33,6 +34,7 @@ const Step2 = ({
 }) => {
   const [options, setOptions] = useState({});
   const [errors, setErrors] = useState({});
+  const toast = useToast();
 
   const getAllSubjects = async () => {
     const token = decodeToken(localStorage.getItem("token"));
@@ -122,25 +124,42 @@ const Step2 = ({
     setErrors(validateForm(entries));
 
     if (Object.keys(validateForm(entries)).length == 0) {
-
-      const responseBody={
-        mobile:'',
-        pass_year:'',
-        dsc_choices:entries.dsc,
-        dse_choices:entries.dse,
-        ge_choices:entries.ge,
-        sec_choices:entries.sec,
-        aecc_choices:entries.aecc,
-        vac_choices:entries.vac
-      }
+      const responseBody = {
+        mobile: `+91${entries.mobile}`,
+        pass_year: parseInt(entries.passyear),
+        dsc_choices: entries.dsc,
+        dse_choices: entries.dse,
+        ge_choice: entries.ge,
+        sec_choice: entries.sec,
+        aecc_choice: entries.aecc,
+        vac_choice: entries.vac,
+      };
 
       const res = await fetchApi(
-        `user/students/${decodeToken(localStorage.getItem("token"))["stu-id"]}`,
+        `user/students/${
+          decodeToken(localStorage.getItem("token"))["stu-id"]
+        }/partial-update-verify`,
         responseBody,
         false,
-        'patch'
+        "post"
       );
-      console.log(res)
+      if (res.status >= 200 && res.status <= 202) {
+        toast({
+          title: "Account updated with subjects!",
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
+        nextStep();
+      } else {
+        toast({
+          title: "Some error has occurred",
+          description: res.message || res.data.message,
+          status: "error",
+          duration: 9000,
+          isClosable: true,
+        });
+      }
     }
   };
 
@@ -227,11 +246,11 @@ const Step2 = ({
         </div>
       </div>
       {/* <div className="flex sm:flex-row flex-col justify-between w-full"> */}
-        {/* <Button onClick={prevStep}>Go Back</Button> */}
+      {/* <Button onClick={prevStep}>Go Back</Button> */}
 
-        <Button colorScheme="blue" onClick={() => handleStep2Submit()}>
-          Next
-        </Button>
+      <Button colorScheme="blue" onClick={() => handleStep2Submit()}>
+        Next
+      </Button>
       {/* </div> */}
     </div>
   );
