@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Tabs from '../components/layout/Tabs';
 import fetchApi from '../components/FetchApi/fetchApi';
 import ShowPdfs from '../components/ShowPdfs/ShowPdfs'
-import pdf from '../../public/java.pdf'
+
 
 const Home = () => {
   const [mostViewed,setMostViewed]=useState([])
