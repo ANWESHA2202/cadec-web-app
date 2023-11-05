@@ -21,7 +21,7 @@ const Navbar = () => {
         setAccessToken(localStorage.getItem('accessToken'));
     },[])
   return (
-    <div className="m-10  w-[95%] mt-2 flex flex-col space-y-5 select-none shadow-sm p-3">
+    <div className="m-10  w-[95%] mt-2 mb-5 flex flex-col space-y-5 select-none shadow-sm p-3">
         <div className="text-gray-500">
             Selected Course: <span className="font-semibold italic text-blue-900">{decodeToken(accessToken)?.course}</span>
         </div>

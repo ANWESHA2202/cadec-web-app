@@ -19,13 +19,13 @@ const Home = () => {
   },[])
   return (
     <div>
-      <div className='w-full' style={{top:'150px' }}>
+      <div className='w-full'>
         <Tabs/>
       </div>
-      <div className='m-16'>
+      <div className='m-16 mt-10'>
 
       <h1 className='text-2xl font-bold text-blue-950'>Most Viewed Notes</h1>
-      <ShowPdfs mostViewed={[pdf,pdf]}/>
+      <ShowPdfs mostViewed={mostViewed}/>
       </div>
     </div>
   );

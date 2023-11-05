@@ -8,6 +8,7 @@ import Grievence from "./pages/grievence";
 import Footer from "./components/layout/Footer";
 import ResearchWorks from "./pages/research-works";
 import Placements from "./pages/placements";
+import StudyMaterials from "./pages/study-materials";
 
 function App() {
  
@@ -20,6 +21,7 @@ function App() {
         
         <Route path="/profile" element={<><Navbar/><Profile/><Footer/></>} />
         <Route path="/grievence" element={<><Navbar/><Grievence/><Footer/></>} />
+        <Route path="/study-materials" element={<><Navbar/><StudyMaterials/><Footer/></>} />
         <Route path="/research-works" element={<><Navbar/><ResearchWorks/><Footer/></>} />
         <Route path="/placements" element={<><Navbar/><Placements/><Footer/></>} />
 

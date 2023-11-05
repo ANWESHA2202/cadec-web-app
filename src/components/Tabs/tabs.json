@@ -1,9 +1,9 @@
 {
-    "tabs":[
+    "home":[
         {
             "name":"Study Materials",
             "bg":"notes",
-            "link":"/study-material"
+            "link":"/study-materials"
         },
         {
             "name":"Assignments",
@@ -27,19 +27,26 @@
     "study-materials":[
         {
             "name":"Notes",
-            "bg":"notes"
+            "bg":"notes",
+            "link":"/study-materials/notes"
         },
         {
             "name":"Syllabus",
-            "bg":"notes"
+            "bg":"notes",
+            "link":"/study-materials/syllabus"
+
         },
         {
             "name":"Marking Scheme",
-            "bg":"notes"
+            "bg":"notes",
+            "link":"/study-materials/marking-scheme"
+
         },
         {
             "name":"Sample and PYQs",
-            "bg":"notes"
+            "bg":"notes",
+            "link":"/study-materials/pyqs"
+
         }
     ],
     "assignments":[
@@ -67,5 +74,7 @@
             "name":"SEC",
             "bg":"notes"
         }
-    ]
+    ],
+    "research-works":[],
+    "placements":[]
 }

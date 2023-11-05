@@ -6,7 +6,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const ShowPdfs = ({ mostViewed }) => {
   return (
-    <div className="m-8 ml-0">
+    <div className="m-8 mt-4 ml-0">
       <div
         className="flex gap-5 overflow-x-auto overflow-y-hidden"
         style={{ whiteSpace: "nowrap" }}
@@ -17,16 +17,16 @@ const ShowPdfs = ({ mostViewed }) => {
             className="inline-block pdf-container"
             style={{ width: "200px", minWidth: "200px",height:'220px' }}
           >
-            <Document file={pdf}>
+            <Document file={pdf?.pdf_file}>
               <Page pageNumber={1} width={200} height={200} />
             </Document>
             <div className="pdf-overlay">
-                <span>Title</span>
+                <span>{pdf?.title}</span>
                 <div className="flex items-center gap-3">
                     <span>
                         <img src={whiteEye} width={21} height={21}/>
                     </span>
-                    <span>10</span>
+                    <span>{pdf?.visit_count||0}</span>
                 </div>
             </div>
           </div>

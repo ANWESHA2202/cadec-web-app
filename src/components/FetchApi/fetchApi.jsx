@@ -1,18 +1,33 @@
+
+
+
 const fetchApi = async (
   url,
   requestBody = "",
   auth = true,
-  method = "POST"
+  method = "POST",
+  token='',
 ) => {
+  const tokenOptions={
+    access: localStorage?.getItem('accessToken'),
+    token:localStorage?.getItem('token')
+  }
+
   try {
     const headers = {
       "Content-Type": "application/json",
     };
 
+    if(auth){
+      headers.Authorization=`Bearer ${tokenOptions[token]}`
+    }
+
     let response;
 
     if (method.toLowerCase() === "get") {
-      response = await fetch(`http://admin.siksakah.com/api/${url}`);
+      response = await fetch(`http://admin.siksakah.com/api/${url}`,{
+        headers
+      });
     } else {
       response = await fetch(`http://admin.siksakah.com/api/${url}/`, {
         method: method,

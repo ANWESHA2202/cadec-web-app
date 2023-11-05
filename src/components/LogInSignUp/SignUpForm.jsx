@@ -28,11 +28,11 @@ const SignUpForm = () => {
     }
 
     const handleSelectChange=(e,field)=>{
-        if(Array.isArray(e)){
-            setEntries(prevEntries=>({...prevEntries,[field]:e.map(item=>item.value)}))
-        }else{
-            setEntries(prevEntries=>({...prevEntries,[field]:e.value}))
-        }
+    if(Array.isArray(e)){
+        setEntries(prevEntries=>({...prevEntries,[field]:e.map(item=>item.value)}))
+    }else{
+        setEntries(prevEntries=>({...prevEntries,[field]:e.value}))
+    }
     }
 
     const nextStep=()=>{

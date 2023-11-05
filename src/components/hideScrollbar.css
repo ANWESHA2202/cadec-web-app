@@ -1,0 +1,22 @@
+.scrollable-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scrollbar-width: none; /* Hide standard scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hide standard scrollbar in IE/Edge */
+  
+    /* Hide WebKit scrollbar for all elements */
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+  
+    /* Hide WebKit scrollbar for the thumb (the draggable part) */
+    ::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+  
+    /* Hide WebKit scrollbar for the track (the non-draggable part) */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
+  
