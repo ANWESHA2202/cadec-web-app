@@ -1,80 +1,100 @@
 {
-    "home":[
-        {
-            "name":"Study Materials",
-            "bg":"notes",
-            "link":"/study-materials"
-        },
-        {
-            "name":"Assignments",
-            "bg":"assignments",
-            "link":"/assignments"
-
-        },
-        {
-            "name":"Research Works",
-            "bg":"researchworks",
-            "link":"/research-works"
-
-        },
-        {
-            "name":"Placements / Internships",
-            "bg":"placements",
-            "link":"/placements"
-
-        }
-    ],
-    "study-materials":[
-        {
-            "name":"Notes",
-            "bg":"notes",
-            "link":"/study-materials/notes"
-        },
-        {
-            "name":"Syllabus",
-            "bg":"notes",
-            "link":"/study-materials/syllabus"
-
-        },
-        {
-            "name":"Marking Scheme",
-            "bg":"notes",
-            "link":"/study-materials/marking-scheme"
-
-        },
-        {
-            "name":"Sample and PYQs",
-            "bg":"notes",
-            "link":"/study-materials/pyqs"
-
-        }
-    ],
-    "assignments":[
-        {
-            "name":"DSC",
-            "bg":"notes"
-        },
-        {
-            "name":"DSE",
-            "bg":"notes"
-        },
-        {
-            "name":"GE",
-            "bg":"notes"
-        },
-        {
-            "name":"VAC",
-            "bg":"notes"
-        },
-        {
-            "name":"AECC",
-            "bg":"notes"
-        },
-        {
-            "name":"SEC",
-            "bg":"notes"
-        }
-    ],
-    "research-works":[],
-    "placements":[]
+  "home": [
+    {
+      "name": "Study Materials",
+      "bg": "notes",
+      "link": "/study-materials"
+    },
+    {
+      "name": "Assignments",
+      "bg": "assignments",
+      "link": "/assignments"
+    },
+    {
+      "name": "Research Works",
+      "bg": "researchworks",
+      "link": "/research-works"
+    },
+    {
+      "name": "Placements / Internships",
+      "bg": "placements",
+      "link": "/placements"
+    }
+  ],
+  "study-materials": [
+    {
+      "name": "Notes",
+      "bg": "notes",
+      "link": "/study-materials/notes"
+    },
+    {
+      "name": "Syllabus",
+      "bg": "notes",
+      "link": "/study-materials/syllabus"
+    },
+    {
+      "name": "Marking Scheme",
+      "bg": "notes",
+      "link": "/study-materials/marking-scheme"
+    },
+    {
+      "name": "Sample and PYQs",
+      "bg": "notes",
+      "link": "/study-materials/pyqs"
+    }
+  ],
+  "assignments": [
+    {
+      "name": "DSC",
+      "bg": "notes"
+    },
+    {
+      "name": "DSE",
+      "bg": "notes"
+    },
+    {
+      "name": "GE",
+      "bg": "notes"
+    },
+    {
+      "name": "VAC",
+      "bg": "notes"
+    },
+    {
+      "name": "AECC",
+      "bg": "notes"
+    },
+    {
+      "name": "SEC",
+      "bg": "notes"
+    }
+  ],
+  "research-works": [],
+  "placements": [],
+  "notes": [
+    {
+      "name": "DSC",
+      "link": "/study-materials/notes/dsc"
+    },
+    {
+      "name": "DSE",
+      "link": "/study-materials/notes/dse"
+    },
+    {
+      "name": "ge",
+      "link": "/study-materials/notes/ge"
+    },
+    {
+      "name": "sec",
+      "link": "/study-materials/notes/sec"
+    },
+    {
+      "name": "vac",
+      "link": "/study-materials/notes/vac"
+    },
+    {
+      "name": "aecc",
+      "link": "/study-materials/notes/aecc"
+    }
+  ]
 }

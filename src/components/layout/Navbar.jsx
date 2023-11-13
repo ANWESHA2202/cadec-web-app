@@ -53,6 +53,10 @@ const Navbar = () => {
                         <MenuList>
                             <MenuItem>About Us</MenuItem>
                             <MenuItem onClick={()=>navigate('/grievence')}>Grievence Portal</MenuItem>
+                            <MenuItem onClick={()=>{
+                                localStorage.removeItem('accessToken');
+                                navigate('/login');
+                            }}>Log Out</MenuItem>
                             
                         </MenuList>
                     </Menu>

@@ -66,7 +66,9 @@ const StudyMaterials = () => {
         let notes = [];
         res?.data?.data?.syllabus?.forEach((note) => {
           let noteObj = {};
-          noteObj.file = `../backend/public${note.pdf_file}`;
+        //   noteObj.file = `../backend/public${note.pdf_file}`;
+        noteObj.file = `https://drive.google.com/file/d/12GPSWid6KKE72gameRWoaMW-prqTDR_n/view?usp=sharing`;
+
           noteObj.title = note?.title;
           noteObj.visitCount = note?.visit_count;
   

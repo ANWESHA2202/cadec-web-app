@@ -15,7 +15,7 @@ const Home = () => {
     }
   }
   useEffect(()=>{
-      getMostViewedNotes()
+    getMostViewedNotes()
   },[])
   return (
     <div>

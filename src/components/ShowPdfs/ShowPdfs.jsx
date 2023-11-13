@@ -17,7 +17,7 @@ const ShowPdfs = ({ mostViewed }) => {
             className="inline-block pdf-container"
             style={{ width: "200px", minWidth: "200px",height:'220px' }}
           >
-            <Document file={pdf?.pdf_file}>
+            <Document file={{url:`${pdf?.pdf_file}/preview`}}>
               <Page pageNumber={1} width={200} height={200} />
             </Document>
             <div className="pdf-overlay">
